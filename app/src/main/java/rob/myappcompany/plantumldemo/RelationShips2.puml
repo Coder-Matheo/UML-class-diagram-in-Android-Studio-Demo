@@ -1,0 +1,43 @@
+@startuml
+
+Class Customer{
+-name: String
+-Address: String
++getCurrentInformation():void
+}
+
+Class Order{
+-data: String
+- status: String
++calcTotal(): double
++calcTxt(): double
+}
+
+abstract class Payment{
+- amount: double
+}
+class Cash{
+- cashAmount: double
+}
+
+class Check{
+-name:String
+-type:String
+-expDate: data
++authorized():boolean
+}
+
+class OrderDetial{
+-quantity: int
+-taxStatus: String
+}
+
+Customer "1" -- "0..*" Order
+
+Payment <|-- Check
+Payment <|-- Cash
+Order <-- Payment
+
+Order "1" o-- "1..*" OrderDetial
+
+@enduml

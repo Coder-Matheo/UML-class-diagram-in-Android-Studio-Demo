@@ -1,0 +1,28 @@
+@startuml
+
+
+Class Dog{
+-name: String
+#id: int
++getName(): String
+}
+
+Owner --> Dog
+
+interface Flying{
+{abstract}flaying(): void
+}
+
+abstract class Animal{
+-name: String
++getName(): String
+}
+
+Class Bird{
++flaying():void
+}
+
+Flying <|.. Bird
+Animal <|-- Bird
+
+@enduml
